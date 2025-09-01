@@ -1,0 +1,65 @@
+Module 1: Data Preprocessing & EDA
+
+-->Download and preprocess air quality datasets.(CPCB, Open AQ)
+
+-Datasets:
+
+1.CPCB (Central Pollution Control Board, India)
+
+2.OpenAQ (global open-source air quality data)
+
+-Steps:
+
+-Data acquisition
+
+1.Download CSV/JSON files from CPCB (usually available city-wise).
+
+2.Use requests or openaq API wrapper to fetch OpenAQ data.
+
+-Data cleaning
+
+1.Handle missing values (NaN, negative values, or extreme outliers).
+
+2.Convert timestamps to datetime.
+
+3.Standardize column names (pm25, pm10, no2, etc.).
+
+4.Merge CPCB & OpenAQ if needed.
+
+-->Conduct EDA to understand pollutant trends and correlations.
+
+Goals: Identify pollutant levels, daily/seasonal patterns, and correlations.
+
+-Steps:
+
+1.Summary statistics
+
+.describe(), missing values count, pollutant-wise averages.
+
+2.Trend visualization
+
+Plot pollutant concentrations over time (lineplot).
+Compare seasonal trends (summer vs. winter).
+Check daily/hourly patterns (rush-hour peaks).
+
+3.Pollutant correlations
+
+Use corr() & heatmaps.
+
+-->Resample data and prepare features for forecasting.
+
+Air quality data is often at hourly/minute level → need consistent time steps.
+
+-Steps:
+
+1.Resample to hourly/daily averages
+
+2.Feature engineering
+
+Lag features (past pollutant levels).
+Rolling means (moving average).
+Temporal features (day, month, weekday, season).
+
+3.Train-test split for forecasting
+
+Example: Train (2018–2022), Test (2023).
